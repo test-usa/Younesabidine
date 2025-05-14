@@ -40,7 +40,7 @@ const Home = () => {
 
   return (
     <CommonWrapper className="text-black">
-      <div className="w-full flex items-center  justify-center gap-10 bg-gray-200">
+      <div className="w-full flex items-center bg-home  justify-center gap-10 ">
         {menulist.map((item, i) => (
           <div key={i} className="py-4">
             <Link to={item.path}>{item.label}</Link>
