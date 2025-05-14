@@ -5,7 +5,7 @@ interface HomeSectionHeader {
   className?: string;
 }
 
-const CommonHeader: React.FC<HomeSectionHeader> = ({ children, className }) => {
+const HomeSectionHeader: React.FC<HomeSectionHeader> = ({ children, className }) => {
   return (
     <h2
       className={`text-black font-semibold font-primary text-lg md:text-2xl leading-6 ${className}`}
@@ -15,4 +15,4 @@ const CommonHeader: React.FC<HomeSectionHeader> = ({ children, className }) => {
   );
 };
 
-export default CommonHeader;
+export default HomeSectionHeader;
