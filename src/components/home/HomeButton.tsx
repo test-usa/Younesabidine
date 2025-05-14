@@ -8,7 +8,7 @@ interface HomeButton {
 const HomeButton: React.FC<HomeButton> = ({ children, className }) => {
   return (
     <button
-      className={`bg-home text-[#030303] text-sm px-6 py-4 w-fit   cursor-pointer rounded-md  ${className}`}
+      className={`bg-home text-[#030303] text-sm px-6 py-3 w-fit   cursor-pointer rounded-md  hover:bg-[#fcb32b] transition-colors ${className}`}
     >
       {children}
     </button>

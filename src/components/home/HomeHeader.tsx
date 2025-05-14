@@ -5,14 +5,14 @@ interface HomeHeader {
   className?: string;
 }
 
-const CommonHeader: React.FC<HomeHeader> = ({ children, className }) => {
+const HomeHeader: React.FC<HomeHeader> = ({ children, className }) => {
   return (
-    <h2
-      className={`text-white  font-primary text-2xl md:text-[48px] leading-6 ${className}`}
+    <h1
+      className={`text-white  font-primary text-2xl md:text-[48px]  ${className}`}
     >
       {children}
-    </h2>
+    </h1>
   );
 };
 
-export default CommonHeader;
+export default HomeHeader;
