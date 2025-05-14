@@ -1,4 +1,5 @@
-import { MapPin, Wifi } from "lucide-react";
+import type React from "react";
+import { Wifi, MapPin } from "lucide-react";
 
 interface PropertyCardProps {
   id: number;
@@ -12,7 +13,7 @@ interface PropertyCardProps {
   amenities: string[];
 }
 
-export default function PropertyCard({
+const PropertyCard: React.FC<PropertyCardProps> = ({
   id,
   title,
   price,
@@ -22,146 +23,42 @@ export default function PropertyCard({
   bathrooms,
   img,
   amenities,
-}: PropertyCardProps) {
+}) => {
   return (
-    <div className="bg-white rounded-lg overflow-hidden shadow-lg">
-      <div className="relative">
-        {/* Property img */}
-        <div className="relative h-64 w-full">
-          <img
-            src={img || "/placeholder.svg"}
-            alt={title}
-            className="object-cover"
-          />
-        </div>
-
-        {/* Price Tag */}
-        <div className="absolute top-4 left-4 bg-amber-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
-          ${price} {priceType}
-        </div>
-
-        {/* Bedrooms & Bathrooms */}
-        <div className="absolute top-4 right-4 flex space-x-2">
-          <span className="bg-white text-gray-800 px-2 py-1 rounded-full text-xs font-semibold">
-            {bedrooms} Bedrooms
-          </span>
-          <span className="bg-white text-gray-800 px-2 py-1 rounded-full text-xs font-semibold">
-            {bathrooms} Bathrooms
-          </span>
-        </div>
-
-        {/* Location */}
-        <div className="absolute bottom-4 left-4 bg-black/50 text-white px-3 py-1 rounded-full text-xs flex items-center">
-          <MapPin className="w-3 h-3 mr-1" />
+    <div className="bg-white rounded-lg shadow-md overflow-hidden">
+      <img
+        src={img || "/placeholder.svg"}
+        alt={title}
+        width={400}
+        height={300}
+        className="object-cover w-full h-48"
+      />
+      <div className="p-4">
+        <h3 className="text-lg font-semibold mb-2">{title}</h3>
+        <div className="flex items-center text-gray-700 mb-2">
+          <MapPin className="w-4 h-4 mr-1" />
           {location}
         </div>
-      </div>
-
-      <div className="p-6">
-        <h3 className="text-xl font-semibold mb-2">{title}</h3>
-        <p className="text-amber-500 font-bold mb-4">
-          ${price} {priceType}
-        </p>
-
-        {/* Amenities */}
-        <div className="flex justify-between items-center mb-4">
-          <div className="flex space-x-6">
-            {amenities.includes("wifi") && (
-              <div className="flex flex-col items-center">
-                <Wifi className="h-5 w-5 text-gray-500" />
-                <span className="text-xs text-gray-500 mt-1">WiFi</span>
-              </div>
-            )}
-            {amenities.includes("pool") && (
-              <div className="flex flex-col items-center">
-                <svg
-                  className="h-5 w-5 text-gray-500"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M2 22H22"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeMiterlimit="10"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M2.95 22L3 9.97C3 9.36 3.29 8.78 3.77 8.4L10.77 2.95C11.49 2.39 12.5 2.39 13.23 2.95L20.23 8.39C20.72 8.77 21 9.34 21 9.97V22"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeMiterlimit="10"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M15.5 11H8.5C7.67 11 7 11.67 7 12.5V22H17V12.5C17 11.67 16.33 11 15.5 11Z"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeMiterlimit="10"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M10 16.25V17.75"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeMiterlimit="10"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-                <span className="text-xs text-gray-500 mt-1">Pool</span>
-              </div>
-            )}
-            {amenities.includes("parking") && (
-              <div className="flex flex-col items-center">
-                <svg
-                  className="h-5 w-5 text-gray-500"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M19.51 18.0098H4.5C3.12 18.0098 2 16.8898 2 15.5098V11.5098C2 10.1298 3.12 9.00977 4.5 9.00977H19.51C20.89 9.00977 22.01 10.1298 22.01 11.5098V15.5098C22.01 16.8898 20.89 18.0098 19.51 18.0098Z"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M12 18.0098V22.0098"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M8 22.0098H16"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M7.99 9.01001L7.98 7.80001C7.98 6.26001 9.24 5.00001 10.78 5.00001H13.21C14.75 5.00001 16.01 6.26001 16.01 7.80001V9.01001"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-                <span className="text-xs text-gray-500 mt-1">Parking</span>
-              </div>
-            )}
-          </div>
+        <div className="flex items-center justify-between mb-2">
+          <span className="text-gray-900 font-bold">
+            ${price} {priceType === "Rent" ? "/month" : ""}
+          </span>
         </div>
-
-        <button className="w-full py-2 bg-amber-500 text-white rounded hover:bg-amber-600 transition-colors">
-          View Details
-        </button>
+        <div className="flex space-x-2">
+          <span>{bedrooms} Bedrooms</span>
+          <span>{bathrooms} Bathrooms</span>
+        </div>
+        <div className="flex space-x-2 mt-2">
+          {amenities.map((amenity, index) => (
+            <div key={index} className="flex items-center text-gray-700">
+              {amenity === "wifi" && <Wifi className="w-4 h-4 mr-1" />}
+              {amenity}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
-}
+};
+
+export default PropertyCard;

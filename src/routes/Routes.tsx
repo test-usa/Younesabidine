@@ -5,7 +5,6 @@ import ContactUs from "@/pages/ContactUs";
 import DreamVilla from "@/pages/DreamVilla";
 import Home from "@/pages/Home";
 import Login from "@/pages/Login";
-import Test from "@/pages/Test";
 import VillasForRent from "@/pages/VillasForRent";
 import VillasForSale from "@/pages/VillasForSale";
 import { createBrowserRouter } from "react-router-dom";
@@ -43,10 +42,7 @@ const routes = createBrowserRouter([
         path: "/login",
         element: <Login />,
       },
-      {
-        path: "/test",
-        element: <Test />,
-      },
+
       {
         path: "/find-your-dream-villa",
         element: <DreamVilla />,

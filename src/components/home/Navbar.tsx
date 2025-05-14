@@ -39,7 +39,7 @@ const Navbar = () => {
         <div className="flex items-center space-x-4">
           <Link
             to="/login"
-            className="px-6 py-4 text-sm border border-white text-white rounded hover:bg-home hover:border-transparent hover:text-[#030303] transition-colors"
+            className="px-6 py-3 text-sm border border-white text-white rounded hover:bg-home hover:border-transparent hover:text-[#030303] transition-colors"
           >
             Login
           </Link>
