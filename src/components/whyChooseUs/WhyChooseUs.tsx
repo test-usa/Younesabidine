@@ -1,4 +1,14 @@
-import { Home, CheckSquare, Shield, Calendar } from "lucide-react"
+
+import whychooseus from "../../assets/images/whychooseus.png"
+import CommonWrapper from "@/common/CommonWrapper";
+import HomeSectionHeader from "../home/HomeSectionHeader";
+import villas1 from "../../assets/images/Villas1.svg"
+import Listings from "../../assets/images/Listings.svg"
+import Villas2 from "../../assets/images/Villas2.svg"
+import Secure from "../../assets/images/Secure.svg"
+import Booking from "../../assets/images/Booking.svg"
+import Room from "../../assets/images/room3.png"
+import HomeButton from "../home/HomeButton";
 
 type FeatureCardProps = {
   icon: React.ReactNode;
@@ -8,68 +18,78 @@ type FeatureCardProps = {
 
 export default function WhyChooseUs() {
   return (
-    <div
-      className="relative py-16 px-4 md:px-8 bg-cover bg-center"
-      style={{ backgroundImage: "url('/placeholder.svg?height=1080&width=1920')" }}
-    >
-      <div className="absolute inset-0 bg-black/30"></div>
-      <div className="relative z-10 max-w-7xl mx-auto">
-        <h2 className="text-3xl font-bold text-center mb-12 text-white">Why Choose Us</h2>
+  
+     
+    <div className="  mx-auto  md:mt-[108px] md:pb-[100px]" 
+      style={{ backgroundImage: `url(${whychooseus})`,
+      backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    }}
+     
+      >
+   <HomeSectionHeader>
+   
+         <h2  className="text-center md:text-[32px] text-2xl">Why Choose Us</h2>
+     
+   </HomeSectionHeader>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:pt-[85px] pt-[50px]">
           {/* First row */}
           <FeatureCard
-            icon={<Home className="w-6 h-6 text-amber-500" />}
+            icon={<img src={villas1} alt="Villas Icon" className="w-6 h-6" />}
             title="Wide Selection of Luxury Villas"
             description="Discover a wide selection of luxury villas, offering exquisite designs, breathtaking views, and world-class amenities for an unforgettable stay."
           />
 
           <FeatureCard
-            icon={<CheckSquare className="w-6 h-6 text-amber-500" />}
+            icon={<img src={Listings} alt="Villas Icon" className="w-6 h-6" />}
             title="Verified Listings"
             description="Discover a wide selection of luxury villas, offering exquisite designs, breathtaking views, and world-class amenities for an unforgettable stay."
           />
 
           <FeatureCard
-            icon={<Home className="w-6 h-6 text-amber-500" />}
+           icon={<img src={Villas2} alt="Villas Icon" className="w-6 h-6" />}
             title="Wide Selection of Luxury Villas"
             description="Discover a wide selection of luxury villas, offering exquisite designs, breathtaking views, and world-class amenities for an unforgettable stay."
           />
 
           {/* Second row */}
           <FeatureCard
-            icon={<Shield className="w-6 h-6 text-amber-500" />}
+            icon={<img src={Secure} alt="Villas Icon" className="w-6 h-6" />}
             title="Secure Transactions"
             description="Discover a wide selection of luxury villas, offering exquisite designs, breathtaking views, and world-class amenities for an unforgettable stay."
           />
 
           <FeatureCard
-            icon={<Calendar className="w-6 h-6 text-amber-500" />}
+           icon={<img src={Booking} alt="Villas Icon" className="w-6 h-6" />}
             title="Flexible Booking"
             description="Enjoy flexible booking options tailored to your schedule and preferences. Modify, reschedule, or cancel with ease for a stress-free experience."
           />
 
-          {/* Image on the right side of second row */}
-          <div className="md:col-span-1 h-full">
-            <img src="" alt="" />
+        
+          <div className="md:col-span-1 h-[300px] ">
+            <img src={Room } alt="Room" className="w-full h-full object-cover rounded-lg " />
           </div>
         </div>
       </div>
-    </div>
+   
   )
 }
 
 function FeatureCard({ icon, title, description }:FeatureCardProps) {
   return (
-    <div className="bg-white p-6 rounded-lg shadow-sm">
+ <CommonWrapper>
+       <div className="bg-white p-6 rounded-lg shadow-sm h-[300px] ">
+  
+        
       <div className="flex flex-col items-start">
-        <div className="bg-amber-100 p-3 rounded-full mb-4">{icon}</div>
-        <h3 className="text-lg font-semibold mb-2">{title}</h3>
-        <p className="text-gray-600 text-sm mb-4">{description}</p>
-        <button className="bg-amber-400 hover:bg-amber-500 text-gray-800 px-4 py-2 rounded-md text-sm font-medium">
-          Learn More
-        </button>
+        <div className="bg-[#FDF2E0] p-3 rounded-full mb-6">{icon}</div>
+        <h3 className="text-lg font-medium  mb-[10px] ">{title}</h3>
+        <p className="text-[#333333CC] text-sm mb-7">{description}</p>
+     <HomeButton> Learn More</HomeButton> 
       </div>
     </div>
+ </CommonWrapper>
   )
 }
