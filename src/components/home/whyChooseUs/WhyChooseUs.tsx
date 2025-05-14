@@ -1,14 +1,16 @@
 
-import whychooseus from "../../assets/images/whychooseus.png"
+import whychooseus from "../../../assets/images/whychooseus.png"
 import CommonWrapper from "@/common/CommonWrapper";
-import HomeSectionHeader from "../home/HomeSectionHeader";
-import villas1 from "../../assets/images/Villas1.svg"
-import Listings from "../../assets/images/Listings.svg"
-import Villas2 from "../../assets/images/Villas2.svg"
-import Secure from "../../assets/images/Secure.svg"
-import Booking from "../../assets/images/Booking.svg"
-import Room from "../../assets/images/room3.png"
-import HomeButton from "../home/HomeButton";
+
+import villas1 from "../../../assets/images/Villas1.svg"
+import Listings from "../../../assets/images/Listings.svg"
+import Villas2 from "../../../assets/images/Villas2.svg"
+import Secure from "../../../assets/images/Secure.svg"
+import Booking from "../../../assets/images/Booking.svg"
+import Room from "../../../assets/images/chooseRoom.png"
+import HomeSectionHeader from "../HomeSectionHeader";
+import HomeButton from "../HomeButton";
+
 
 type FeatureCardProps = {
   icon: React.ReactNode;
@@ -20,7 +22,7 @@ export default function WhyChooseUs() {
   return (
   
      
-    <div className="  mx-auto  md:mt-[108px] md:pb-[100px]" 
+    <div className="  mx-auto py-10 md:mt-[108px] md:pb-[100px]" 
       style={{ backgroundImage: `url(${whychooseus})`,
       backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
@@ -68,7 +70,7 @@ export default function WhyChooseUs() {
           />
 
         
-          <div className="md:col-span-1 h-[300px] ">
+          <div className="md:col-span-1 h-[300px] p-2">
             <img src={Room } alt="Room" className="w-full h-full object-cover rounded-lg " />
           </div>
         </div>
@@ -83,7 +85,7 @@ function FeatureCard({ icon, title, description }:FeatureCardProps) {
        <div className="bg-white p-6 rounded-lg shadow-sm h-[300px] ">
   
         
-      <div className="flex flex-col items-start">
+      <div className="flex flex-col items-start ">
         <div className="bg-[#FDF2E0] p-3 rounded-full mb-6">{icon}</div>
         <h3 className="text-lg font-medium  mb-[10px] ">{title}</h3>
         <p className="text-[#333333CC] text-sm mb-7">{description}</p>

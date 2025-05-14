@@ -2,14 +2,15 @@
 
 import { useState } from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
-import { Card } from "@/components/ui/card"
+
 import CommonWrapper from "@/common/CommonWrapper"
-import HomeSectionHeader from "../home/HomeSectionHeader"
-import man1 from "../../assets/images/man1.png"
-import man2 from "../../assets/images/man2.png"
-import man3 from "../../assets/images/man3.png"
-import cottetions from "../../assets/images/cottetion.svg"
-import HomeButton from "../home/HomeButton"
+
+import man1 from "../../../assets/images/man1.png"
+import man2 from "../../../assets/images/man2.png"
+import man3 from "../../../assets/images/man3.png"
+import cottetions from "../../../assets/images/cottetion.svg"
+import HomeSectionHeader from "../HomeSectionHeader"
+import HomeButton from "../HomeButton"
 
 const testimonials = [
   {

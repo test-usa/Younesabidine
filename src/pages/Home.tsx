@@ -1,5 +1,8 @@
 import CommonWrapper from "@/common/CommonWrapper";
-import HomeButton from "@/components/home/HomeButton";
+import HowItWorks from "@/components/home/howItWorks/HowItWorks";
+import TestimonialCarousel from "@/components/home/TestimonialCarousel/TestimonialCarousel";
+import WhyChooseUs from "@/components/home/whyChooseUs/WhyChooseUs";
+
 import { Link } from "react-router-dom";
 
 const Home = () => {
@@ -48,6 +51,9 @@ const Home = () => {
           </div>
         ))}
       </div>
+      <WhyChooseUs/>
+      <TestimonialCarousel />
+      <HowItWorks />
     </CommonWrapper>
   );
 };
