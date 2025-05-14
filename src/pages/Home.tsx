@@ -16,6 +16,11 @@ import product1 from "../assets/images/image1.png";
 import product3 from "../assets/images/image3.png";
 import product4 from "../assets/images/image4.png";
 import CommonWrapper from "@/common/CommonWrapper";
+import WhyChooseUs from "@/components/home/whyChooseUs/WhyChooseUs";
+import HowItWorks from "@/components/home/howItWorks/HowItWorks";
+import TestimonialCarousel from "@/components/home/TestimonialCarousel/TestimonialCarousel";
+import VillaJourney from "@/components/home/villaJourney/VillaJourney";
+import Footer from "@/components/home/Footer";
 // Hero slider data
 const heroSlides = [
   {
@@ -308,6 +313,13 @@ const Home = () => {
           </button>
         </div>
       </div>
+
+      <WhyChooseUs />
+      <TestimonialCarousel />
+      <HowItWorks />
+      <VillaJourney />
+
+      <Footer />
     </div>
   );
 };
