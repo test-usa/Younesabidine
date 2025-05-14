@@ -1,4 +1,5 @@
 import CommonWrapper from "@/common/CommonWrapper";
+import HomeButton from "@/components/home/HomeButton";
 import { Link } from "react-router-dom";
 
 const Home = () => {
