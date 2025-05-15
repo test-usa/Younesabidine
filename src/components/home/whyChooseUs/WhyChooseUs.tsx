@@ -19,11 +19,11 @@ type FeatureCardProps = {
 export default function WhyChooseUs() {
   return (
     <div
-      className="  mx-auto  bg-[#FAFAFA;]"
+      className="  mx-auto  bg-[#FAFAFA;] md:pb-20 pb-10"
       style={{
         backgroundImage: `url(${whychooseus})`,
         backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
+        backgroundSize: "contain",
         backgroundPosition: "center",
       }}
     >
