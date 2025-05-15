@@ -192,11 +192,11 @@ const Home = () => {
                 index === currentSlide ? "opacity-100" : "opacity-0"
               }`}
             >
-              <img
-                className=" w-full"
-                src={slide.img || "/placeholder.svg"}
-                alt={`Luxury villa ${index + 1}`}
-              />
+            <img
+  className="w-full h-full object-cover"
+  src={slide.img || "/placeholder.svg"}
+  alt={`Luxury villa ${index + 1}`}
+/>
             </div>
           ))}
         </div>
@@ -207,16 +207,16 @@ const Home = () => {
           <Navbar />
 
           {/* Hero Content */}
-          <div className="flex flex-col items-center justify-center text-center px-4 pt-20 pb-32 md:pt-32 md:pb-48">
-            <HomeHeader className="text-4xl md:text-6xl font-bold text-white mb-6 transition-opacity duration-500">
+          <div className="flex flex-col items-center justify-center text-center px-4 pt-24 pb-32 sm:pt-28 md:pt-32 md:pb-48">
+            <HomeHeader className="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-6">
               {currentHeroSlide.title}
             </HomeHeader>
-            <p className="text-white max-w-2xl mb-12 text-lg transition-opacity duration-500">
+            <p className="text-white text-sm sm:text-base max-w-xl mb-8 sm:mb-12">
               {currentHeroSlide.description}
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <button className="px-6 py-3 bg-amber-500 text-white rounded-full flex items-center justify-center gap-2 hover:bg-amber-600 transition-colors">
+            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center">
+              <button className="px-6 py-3 bg-[#F1B037] text-[#000000] rounded-full flex items-center justify-center gap-2 hover:bg-amber-600 transition-colors">
                 Explore Rentals
                 <ArrowRight className="w-5 h-5" />
               </button>
@@ -249,7 +249,7 @@ const Home = () => {
           {/* Search Section with Tabs */}
 
           <CommonWrapper>
-            <div className=" w-full px-4 -mt-16 relative">
+            <div className=" w-full px-4 sm:px-6 md:px-8 -mt-16">
               <HomeTabs activeTab={activeTab} setActiveTab={setActiveTab} />
             </div>
           </CommonWrapper>
@@ -261,7 +261,7 @@ const Home = () => {
           Featured Properties
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {paginatedProperties.map((property) => (
             <PropertyCard
               key={property.id}
@@ -279,7 +279,7 @@ const Home = () => {
         </div>
 
         {/* Pagination */}
-        <div className="flex justify-center mt-12 space-x-2">
+        <div className="flex flex-wrap justify-center mt-12 gap-2">
           <button
             onClick={() => setCurrentPage(Math.max(1, currentPage - 1))}
             className="p-2 rounded-full bg-gray-200 text-gray-600 hover:bg-gray-300 transition-colors"
