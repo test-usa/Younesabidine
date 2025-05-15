@@ -87,7 +87,7 @@ export default function TestimonialCarousel() {
       <CommonWrapper>
         <div className="mx-auto">
           <HomeSectionHeader>
-            <h2 className="text-center md:pb-[80px] pb-10">What Our Clients Say</h2>
+            <h2 className="text-center  pb-10">What Our Clients Say</h2>
           </HomeSectionHeader>
 
           <div className="relative">

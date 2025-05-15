@@ -82,7 +82,7 @@ const Footer: React.FC = () => {
 
                          
                     </div>
-                    <div className=" flex justify-end">
+                    <div className=" flex md:justify-end justify-center">
                          <div className="max-w-lg">
                                 <h4 className="text-lg font-medium pb-3">Newsletter</h4>
                                 <div className="flex gap-2">
