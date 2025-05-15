@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
     return (
         <footer className="bg-[#000000] text-white">
             <CommonWrapper>
-                <div className=" mx-auto py-[76px]">
+                <div className=" mx-auto py-16">
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                         {/* Company Info */}
                         <div className="space-y-4">
@@ -33,7 +33,7 @@ const Footer: React.FC = () => {
                             </div>
                         </div>
                         {/* privacy */}
-                        <div className='pl-10'>
+                        <div className='md:pl-10'>
                             <h4 className="text-lg font-bold mb-4 text-[#FFFFFF]">Privacy Policy</h4>
                             <ul className="space-y-2 text-base text-[#FFFFFF]">
                                 {['Accounting & Taxes', 'Business Finance', 'Consumer Market', 'Strategy & Planning', 'Audit & Evaluation'].map((item, index) => (
@@ -98,7 +98,7 @@ const Footer: React.FC = () => {
                     </div>
                      
 
-                    <div className="mt-12 pt-4 border-t border-[#484848] text-center text-sm text-[#FFFFFF]">
+                    <div className="mt-12 pt-4 border-t border-[#333333] text-center text-sm text-[#FFFFFF]">
                         <p>© 2023 abwab.com. All rights reserved.</p>
                     </div>
                 </div>

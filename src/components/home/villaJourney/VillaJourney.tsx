@@ -14,7 +14,7 @@ const VillaJourney: React.FC = () => {
     >
       <div className="absolute inset-0 bg-[#00000075]" />
       <div className="relative z-10 flex flex-col items-center justify-center h-full  text-center px-4">
-        <CommonHeader>   <h1 className="pb-[88px] ">
+        <CommonHeader>   <h1 className="md:pb-[88px] pb-10 ">
           Start Your Villa Journey Today!
         </h1> </CommonHeader>
       

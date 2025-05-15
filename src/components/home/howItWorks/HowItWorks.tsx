@@ -85,7 +85,7 @@ const HowItWorks = () => {
   </div>
 
   {/* Second Row */}
-  <div className="flex flex-row gap-4 mt-4 p-2">
+  <div className="flex flex-row gap-4  p-2">
     <div className="w-1/2">
       <img src={room3} alt="" className="w-full h-full rounded-lg mb-4 sm:mb-0" />
     </div>

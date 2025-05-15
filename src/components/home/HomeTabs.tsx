@@ -97,7 +97,7 @@ const HomeTabs = ({ activeTab, setActiveTab }) => {
           onValueChange={setActiveTab}
           className="w-full"
         >
-          <TabsList className="max-w-50 mx-auto grid grid-cols-3 gap-[1px] rounded-sm">
+          <TabsList className=" max-w-50 mx-auto grid grid-cols-3 gap-[1px] rounded-sm  ">
             <TabsTrigger
               value="buy"
               className="py-4 px-6 data-[state=active]:bg-white data-[state=inactive]:bg-white/20 data-[state=active]:text-[#313131] data-[state=inactive]:text-white data-[state=inactive]:border data-[state=inactive]:border-white/20 t    text-base rounded-t-md"

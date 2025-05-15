@@ -83,7 +83,7 @@ export default function TestimonialCarousel() {
   const displayedTestimonials = testimonials.slice(currentIndex, currentIndex + visibleTestimonials)
 
   return (
-    <div className="w-full bg-[#F2F2F2] py-12 px-4 md:px-8 lg:px-16">
+    <div className="w-full bg-[#F2F2F2] py-16 px-4 md:px-8 lg:px-16">
       <CommonWrapper>
         <div className="mx-auto">
           <HomeSectionHeader>
@@ -93,10 +93,10 @@ export default function TestimonialCarousel() {
           <div className="relative">
             <button
               onClick={handlePrevious}
-              className="absolute left-2 md:left-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-md"
+              className="absolute left-2 md:left-0 top-1/2 -translate-y-1/2 z-10  p-2 "
               aria-label="Previous testimonial"
             >
-              <ChevronLeft className="h-5 w-5" />
+              <ChevronLeft className="h-6 w-6" />
             </button>
 
             <div className="flex flex-wrap justify-center gap-6 overflow-hidden">
@@ -149,10 +149,10 @@ export default function TestimonialCarousel() {
 
             <button
               onClick={handleNext}
-              className="absolute right-2 md:right-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-md"
+              className="absolute right-2 md:right-0 top-1/2 -translate-y-1/2 z-10 "
               aria-label="Next testimonial"
             >
-              <ChevronRight className="h-5 w-5" />
+              <ChevronRight className="h-6 w-6" />
             </button>
           </div>
 
