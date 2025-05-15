@@ -1,5 +1,8 @@
 import type React from "react";
-import { Wifi, MapPin } from "lucide-react";
+import { MapPin } from "lucide-react";
+import wifi from "../../assets/images/wifi.svg"
+import pool from "../../assets/images/pool.svg"
+import parking from "../../assets/images/parking.svg"
 
 interface PropertyCardProps {
   id: number;
@@ -26,36 +29,70 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
 }) => {
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden">
-      <img
-        src={img || "/placeholder.svg"}
-        alt={title}
-        width={400}
-        height={300}
-        className="object-cover w-full h-48"
-      />
-      <div className="p-4">
+
+      <div className="h-48 bg-gray-200 relative">
+
+        <img
+          src={img || "/placeholder.svg"}
+          alt={title}
+          width={400}
+          height={300}
+          className="object-cover w-full h-48"
+        />
+        <div className="absolute top-4 left-4">
+          <div className="flex items-center justify-between mb-2">
+            <span className="text-white font-semibold bg-[#64B870E5] px-3 py-1 rounded-md text-sm">
+              $ {price} {priceType === "Rent" ? "/month" : ""}
+            </span>
+          </div>
+
+        </div>
+        <div className="absolute top-4 right-4">
+          <div className="flex  gap-2 text-white font-semibold text-sm">
+            <p className="bg-[#507DEF] px-2 py-1 rounded-md">{bedrooms} Bedrooms</p>
+            <p className="bg-[#507DEF] px-2 py-1 rounded-md">{bathrooms} Bathrooms</p>
+          </div>
+        </div>
+
+        <div className="absolute bottom-0 left-4">
+          <div className="flex items-center text-white mb-2">
+            <MapPin className="w-4 h-4 mr-1" />
+            {location}
+          </div>
+        </div>
+      </div>
+
+
+      <div className="p-4 ">
         <h3 className="text-lg font-semibold mb-2">{title}</h3>
         <div className="flex items-center text-gray-700 mb-2">
           <MapPin className="w-4 h-4 mr-1" />
           {location}
         </div>
         <div className="flex items-center justify-between mb-2">
-          <span className="text-gray-900 font-bold">
-            ${price} {priceType === "Rent" ? "/month" : ""}
+          <span className="text-[#507DEF] text-sm bold">
+            $ {price} {priceType === "Rent" ? "/month" : ""}
           </span>
         </div>
-        <div className="flex space-x-2">
-          <span>{bedrooms} Bedrooms</span>
-          <span>{bathrooms} Bathrooms</span>
+        <div className="border-t border-[#E2E2E2]">
+          <div className=" flex flex-wrap gap-4 mb-6 py-4">
+            {amenities.map((amenity, index) => (
+              <div key={index} className="flex flex-col items-center text-gray-700 text-sm " >
+                <div className="mb-1">
+                  {amenity === "wifi" && <img src={wifi} alt="wifi" className="w-5 h-5" />}
+                  {amenity === "pool" && <img src={pool} alt="pool" className="w-5 h-5" />}
+                  {amenity === "parking" && <img src={parking} alt="parking" className="w-5 h-5" />}
+                  {/* Add more amenities here as needed */}
+                </div>
+                <span>{amenity}</span>
+              </div>
+            ))}
+
+          </div>
+
         </div>
-        <div className="flex space-x-2 mt-2">
-          {amenities.map((amenity, index) => (
-            <div key={index} className="flex items-center text-gray-700">
-              {amenity === "wifi" && <Wifi className="w-4 h-4 mr-1" />}
-              {amenity}
-            </div>
-          ))}
-        </div>
+
+
       </div>
     </div>
   );
