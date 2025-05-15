@@ -8,8 +8,13 @@ import Login from "@/pages/Login";
 import VillasForRent from "@/pages/VillasForRent";
 import VillasForSale from "@/pages/VillasForSale";
 import { createBrowserRouter } from "react-router-dom";
+import adminRoutes from "./AdminRoutes";
+import agencyRoutes from "./AgencyRoutes";
+import developerRoutes from "./DeveloperRoutes";
+import ownerRoutes from "./OwnerRoutes";
+import tenantRoutes from "./TenantRoutes";
 
-const routes = createBrowserRouter([
+const RootRoutes = createBrowserRouter([
   {
     path: "/",
     element: <App />,
@@ -49,6 +54,11 @@ const routes = createBrowserRouter([
       },
     ],
   },
+  adminRoutes,
+  agencyRoutes,
+  developerRoutes,
+  tenantRoutes,
+  ownerRoutes,
 ]);
 
-export default routes;
+export default RootRoutes;

@@ -1,11 +1,11 @@
 import { Outlet } from "react-router-dom";
 
-const App = () => {
+const TenantLayout = () => {
   return (
-    <div>
+    <main>
       <Outlet />
-    </div>
+    </main>
   );
 };
 
-export default App;
+export default TenantLayout;

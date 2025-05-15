@@ -6,6 +6,8 @@
 
 @theme {
   --color-home: #F1B037;
+  --color-dashboard: #E7F9FF;
+
 
   --font-primary: "Roboto", sans-serif;
   --font-secondary: "Lato", sans-serif;
