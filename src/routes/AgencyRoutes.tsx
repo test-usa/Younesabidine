@@ -1,4 +1,4 @@
-import Agency from "@/Dashboard/Agency/Agency";
+import Agency from "@/Dashboard/Agency/pages/Agency";
 import AgencyLayout from "@/Layouts/AgencyLayout";
 
 const agencyRoutes = {

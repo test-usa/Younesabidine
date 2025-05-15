@@ -1,9 +1,6 @@
-import React from "react";
-
 const Featured = () => {
   return (
     <div>
-      {" "}
       {/* Featured Properties Section */}
       <div className="max-w-7xl mx-auto px-4 py-16">
         <h2 className="text-3xl font-bold text-center mb-12">
@@ -22,8 +19,6 @@ const Featured = () => {
                   <img
                     src={property.img || "/placeholder.svg"}
                     alt={property.title}
-                    fill
-                    className="object-cover"
                   />
                 </div>
 
