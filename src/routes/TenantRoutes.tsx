@@ -1,4 +1,4 @@
-import Tenant from "@/Dashboard/Tenant/Tenant";
+import Tenant from "@/Dashboard/Tenant/pages/Tenant";
 import TenantLayout from "@/Layouts/TenantLayout";
 
 const tenantRoutes = {

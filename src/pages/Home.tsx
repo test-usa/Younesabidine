@@ -8,8 +8,6 @@ import HomeHeader from "@/components/home/HomeHeader";
 import img1 from "../assets/images/hero.png";
 import img2 from "../assets/images/hero6.webp";
 import img3 from "../assets/images/hero5.jpeg";
-import img4 from "../assets/images/hero3.jpeg";
-import Tabs from "@/components/home/HomeTabs";
 import HomeTabs from "@/components/home/HomeTabs";
 
 import product1 from "../assets/images/image1.png";
@@ -192,11 +190,11 @@ const Home = () => {
                 index === currentSlide ? "opacity-100" : "opacity-0"
               }`}
             >
-            <img
-  className="w-full h-full object-cover"
-  src={slide.img || "/placeholder.svg"}
-  alt={`Luxury villa ${index + 1}`}
-/>
+              <img
+                className="w-full h-full object-cover"
+                src={slide.img || "/placeholder.svg"}
+                alt={`Luxury villa ${index + 1}`}
+              />
             </div>
           ))}
         </div>
@@ -249,9 +247,7 @@ const Home = () => {
           {/* Search Section with Tabs */}
 
           <CommonWrapper>
-
             <div className=" w-full px-4 sm:px-6 md:px-8 -mt-16">
-
               <HomeTabs activeTab={activeTab} setActiveTab={setActiveTab} />
             </div>
           </CommonWrapper>

@@ -3,33 +3,60 @@ import { useState } from "react";
 import home from "../../../assets/dashicon/home.png";
 import userManagement from "../../../assets/dashicon/usermanagement.png";
 import listing from "../../../assets/dashicon/propertyListing.png";
-import report from "../../../assets/dashicon/propertyReport.svg";
 import digital from "../../../assets/dashicon/digitalContact.png";
-import tenant from "../../../assets/dashicon/tenant.png";
 import subscription from "../../../assets/dashicon/subscribe.png";
 import realState from "../../../assets/dashicon/realstate.png";
 import communication from "../../../assets/dashicon/communication.png";
+import dispute from "../../../assets/dashicon/digitalContact.png";
 import setting from "../../../assets/dashicon/setting.png";
+
 const sidebarList = [
   { label: "Home", tab: "home", icon: home },
   {
-    label: "User Management",
-    tab: "user-management",
-    icon: userManagement,
-    hasSubmenu: true, // assuming dropdown
+    label: "Property Management",
+    tab: "property-management",
+    icon: listing,
   },
-  { label: "Property Listings", tab: "property-listings", icon: listing },
-  { label: "Property Reports", tab: "property-reports", icon: report },
-  { label: "Digital Contracts", tab: "digital-contracts", icon: digital },
-  { label: "Tenant Ratings", tab: "tenant-ratings", icon: tenant },
-  { label: "Subscriptions", tab: "subscriptions", icon: subscription },
+  {
+    label: "Contract Management",
+    tab: "contract-management",
+    icon: digital,
+  },
+  {
+    label: "Tenant Management",
+    tab: "tenant-management",
+    icon: userManagement,
+  },
+  {
+    label: "Reviews & Ratings",
+    tab: "reviews-ratings",
+    icon: digital,
+  },
+  {
+    label: "Dispute Management",
+    tab: "dispute-management",
+    icon: dispute,
+  },
+  {
+    label: "Subscriptions",
+    tab: "subscriptions",
+    icon: subscription,
+  },
   {
     label: "Real Estate Support",
     tab: "real-estate-support",
     icon: realState,
   },
-  { label: "Communication", tab: "communication", icon: communication },
-  { label: "Settings", tab: "settings", icon: setting },
+  {
+    label: "Communication",
+    tab: "communication",
+    icon: communication,
+  },
+  {
+    label: "Settings",
+    tab: "settings",
+    icon: setting,
+  },
 ];
 
 interface Sidebar {

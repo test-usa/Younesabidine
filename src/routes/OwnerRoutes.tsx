@@ -1,4 +1,4 @@
-import Owner from "@/Dashboard/Owner/Owner";
+import Owner from "@/Dashboard/Owner/pages/Owner";
 import OwnerLayout from "@/Layouts/OwnerLayout";
 
 const ownerRoutes = {

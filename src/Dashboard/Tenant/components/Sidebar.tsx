@@ -1,35 +1,57 @@
 import logo from "../../../assets/images/dashlogo.png";
 import { useState } from "react";
 import home from "../../../assets/dashicon/home.png";
-import userManagement from "../../../assets/dashicon/usermanagement.png";
 import listing from "../../../assets/dashicon/propertyListing.png";
-import report from "../../../assets/dashicon/propertyReport.svg";
-import digital from "../../../assets/dashicon/digitalContact.png";
-import tenant from "../../../assets/dashicon/tenant.png";
-import subscription from "../../../assets/dashicon/subscribe.png";
 import realState from "../../../assets/dashicon/realstate.png";
 import communication from "../../../assets/dashicon/communication.png";
+import dispute from "../../../assets/dashicon/dispute.svg";
 import setting from "../../../assets/dashicon/setting.png";
+import upcoming from "../../../assets/dashicon/upComming.svg";
+import digital from "../../../assets/dashicon/digitalContact.png";
+import contact from "../../../assets/dashicon/contact.svg";
+
 const sidebarList = [
   { label: "Home", tab: "home", icon: home },
   {
-    label: "User Management",
-    tab: "user-management",
-    icon: userManagement,
-    hasSubmenu: true, // assuming dropdown
+    label: "Property Overview",
+    tab: "property-overview",
+    icon: listing,
   },
-  { label: "Property Listings", tab: "property-listings", icon: listing },
-  { label: "Property Reports", tab: "property-reports", icon: report },
-  { label: "Digital Contracts", tab: "digital-contracts", icon: digital },
-  { label: "Tenant Ratings", tab: "tenant-ratings", icon: tenant },
-  { label: "Subscriptions", tab: "subscriptions", icon: subscription },
   {
-    label: "Real Estate Support",
-    tab: "real-estate-support",
+    label: "Upcoming Payments",
+    tab: "upcoming-payments",
+    icon: upcoming,
+  },
+  {
+    label: "Rental Agreements",
+    tab: "rental-agreements",
+    icon: contact,
+  },
+  {
+    label: "Reviews & Ratings",
+    tab: "reviews-ratings",
+    icon: digital,
+  },
+  {
+    label: "Dispute Management",
+    tab: "dispute-management",
+    icon: dispute,
+  },
+  {
+    label: "Support",
+    tab: "support",
     icon: realState,
   },
-  { label: "Communication", tab: "communication", icon: communication },
-  { label: "Settings", tab: "settings", icon: setting },
+  {
+    label: "Communication",
+    tab: "communication",
+    icon: communication,
+  },
+  {
+    label: "Settings",
+    tab: "settings",
+    icon: setting,
+  },
 ];
 
 interface Sidebar {
