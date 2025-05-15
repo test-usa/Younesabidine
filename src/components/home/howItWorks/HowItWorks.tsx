@@ -64,7 +64,7 @@ const HowItWorks = () => {
                   
                   {/* Step content */}
                   <div className="ml-6 pt-1">
-                    <h3 className="text-lg font-semibold text-[#000000] mb-1">{step.title}</h3>
+                    <h3 className="md:text-lg text-base font-semibold text-[#000000] mb-1">{step.title}</h3>
                     <p className="text-[#4B4B4B] text-base">{step.description}</p>
                   </div>
                 </div>

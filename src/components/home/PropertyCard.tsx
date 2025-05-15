@@ -18,7 +18,7 @@ interface PropertyCardProps {
 }
 
 const PropertyCard: React.FC<PropertyCardProps> = ({
-  id,
+
   title,
   price,
   priceType,
@@ -31,7 +31,7 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden">
 
-      <div className="h-48 bg-gray-200 relative">
+      <div className="h-48 bg-gray-300 relative">
 
         <img
           src={img || "/placeholder.svg"}
@@ -78,7 +78,7 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
 
         <div className="border-t border-[#E2E2E2]">
           <div className="flex justify-between items-center">
-              <div className=" flex flex-wrap gap-4 mb-6 py-4">
+              <div className=" flex flex-wrap gap-4 py-4">
             {amenities.map((amenity, index) => (
               <div key={index} className="flex flex-col items-center text-gray-700 text-sm " >
                 <div className="mb-1">

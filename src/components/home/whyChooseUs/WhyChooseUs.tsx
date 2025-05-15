@@ -19,11 +19,11 @@ type FeatureCardProps = {
 export default function WhyChooseUs() {
   return (
     <div
-      className="  mx-auto  bg-[#FAFAFA;]"
+      className="  mx-auto  bg-[#FAFAFA;] md:pb-20 pb-10"
       style={{
         backgroundImage: `url(${whychooseus})`,
         backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
+        backgroundSize: "contain",
         backgroundPosition: "center",
       }}
     >
@@ -32,7 +32,7 @@ export default function WhyChooseUs() {
           <h2 className=" text-center">Why Choose Us</h2>
         </HomeSectionHeader>
         <CommonWrapper>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:pt-[85px] pt-[50px]">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:pt-16 pt-10">
             {/* First row */}
             <FeatureCard
               icon={<img src={villas1} alt="Villas Icon" className="w-6 h-6" />}

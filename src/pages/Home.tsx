@@ -186,9 +186,8 @@ const Home = () => {
           {heroSlides.map((slide, index) => (
             <div
               key={slide.id}
-              className={`absolute inset-0 transition-opacity duration-1000 ${
-                index === currentSlide ? "opacity-100" : "opacity-0"
-              }`}
+              className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? "opacity-100" : "opacity-0"
+                }`}
             >
               <img
                 className="w-full h-full object-cover"
@@ -214,7 +213,7 @@ const Home = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center">
-              <button className="px-6 py-3 bg-[#F1B037] text-[#000000] rounded-full flex items-center justify-center gap-2 hover:bg-amber-600 transition-colors">
+              <button className="px-6 py-3 bg-[#F1B037] text-[#000000] rounded-full flex items-center justify-center gap-2">
                 Explore Rentals
                 <ArrowRight className="w-5 h-5" />
               </button>
@@ -293,11 +292,10 @@ const Home = () => {
             <button
               key={page}
               onClick={() => setCurrentPage(page)}
-              className={`w-10 h-10 rounded-md flex items-center justify-center transition-colors ${
-                currentPage === page
+              className={`w-10 h-10 rounded-md flex items-center justify-center transition-colors ${currentPage === page
                   ? "bg-[#F1B037] text-white"
                   : "bg-gray-200 text-gray-600 hover:bg-gray-300"
-              }`}
+                }`}
             >
               {page}
             </button>
