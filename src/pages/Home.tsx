@@ -249,7 +249,7 @@ const Home = () => {
           {/* Search Section with Tabs */}
 
           <CommonWrapper>
-            <div className=" w-full px-4 -mt-16 relative">
+            <div className=" w-full px-4   relative">
               <HomeTabs activeTab={activeTab} setActiveTab={setActiveTab} />
             </div>
           </CommonWrapper>
