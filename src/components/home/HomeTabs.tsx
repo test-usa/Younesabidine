@@ -77,7 +77,6 @@ interface HomeTabs {
   setActiveTab: (value: string) => void;
 }
 
-
 const HomeTabs: React.FC<HomeTabs> = ({ activeTab, setActiveTab }) => {
   const [filters, setFilters] = useState({
     location: "Any Location",
@@ -123,7 +122,10 @@ const HomeTabs: React.FC<HomeTabs> = ({ activeTab, setActiveTab }) => {
             </TabsTrigger>
           </TabsList>
 
-          <TabsContent value="buy" className=" bg-white py-10 px-5 rounded-lg w-full">
+          <TabsContent
+            value="buy"
+            className=" bg-white py-10 px-5 rounded-lg w-full"
+          >
             <div className=" flex flex-col xl:flex-row  justify-between items-center ">
               <div className=" xl:w-5/6 w-full flex flex-col lg:flex-row  items-center gap-4">
                 <div className=" w-full">
@@ -134,7 +136,9 @@ const HomeTabs: React.FC<HomeTabs> = ({ activeTab, setActiveTab }) => {
                   <TabSelect
                     title="Enter a location"
                     object={locationOptions}
-                    handleFilterChange={handleFilterChange}
+                    handleFilterChange={(value) =>
+                      handleFilterChange("location", value)
+                    }
                   />
                 </div>
                 <div className="w-full">
@@ -143,9 +147,11 @@ const HomeTabs: React.FC<HomeTabs> = ({ activeTab, setActiveTab }) => {
                   </label>
 
                   <TabSelect
-                    title="Enter a location"
+                    title="Enter a property type"
                     object={propertyTypeOptions}
-                    handleFilterChange={handleFilterChange}
+                    handleFilterChange={(value) =>
+                      handleFilterChange("propertyType", value)
+                    }
                   />
                 </div>
                 <div className="w-full ">
@@ -156,7 +162,9 @@ const HomeTabs: React.FC<HomeTabs> = ({ activeTab, setActiveTab }) => {
                   <TabSelect
                     title="Enter a price"
                     object={priceRangeOptions.buy}
-                    handleFilterChange={handleFilterChange}
+                    handleFilterChange={(value) =>
+                      handleFilterChange("priceRange", value)
+                    }
                   />
                 </div>
                 <div className="w-full ">
@@ -167,7 +175,9 @@ const HomeTabs: React.FC<HomeTabs> = ({ activeTab, setActiveTab }) => {
                   <TabSelect
                     title="Enter a bedroom"
                     object={bedroomOptions}
-                    handleFilterChange={handleFilterChange}
+                    handleFilterChange={(value) =>
+                      handleFilterChange("bedrooms", value)
+                    }
                   />
                 </div>
                 <div className="w-full ">
@@ -176,16 +186,17 @@ const HomeTabs: React.FC<HomeTabs> = ({ activeTab, setActiveTab }) => {
                   </label>
 
                   <TabSelect
-                    title="Enter a amenities"
+                    title="Enter an amenity"
                     object={amenityOptions}
-                    handleFilterChange={handleFilterChange}
+                    handleFilterChange={(value) =>
+                      handleFilterChange("amenities", value)
+                    }
                   />
                 </div>
               </div>
-<div className="xl:1/6 mt-4">
-   <TwoButton />
-</div>
-             
+              <div className="xl:1/6 mt-4">
+                <TwoButton />
+              </div>
             </div>
           </TabsContent>
           <TabsContent value="sales" className=" bg-white p-10 rounded-lg">
@@ -248,9 +259,9 @@ const HomeTabs: React.FC<HomeTabs> = ({ activeTab, setActiveTab }) => {
                 </div>
               </div>
 
-            <div className="xl:1/6 mt-4">
-   <TwoButton />
-</div>
+              <div className="xl:1/6 mt-4">
+                <TwoButton />
+              </div>
             </div>
           </TabsContent>
           <TabsContent value="rent" className=" bg-white p-10 rounded-lg">
@@ -313,9 +324,9 @@ const HomeTabs: React.FC<HomeTabs> = ({ activeTab, setActiveTab }) => {
                 </div>
               </div>
 
-        <div className="xl:1/6 mt-4">
-   <TwoButton />
-</div>
+              <div className="xl:1/6 mt-4">
+                <TwoButton />
+              </div>
             </div>
           </TabsContent>
         </Tabs>
