@@ -22,7 +22,7 @@ export default function WhyChooseUs() {
   return (
   
      
-    <div className="  mx-auto py-10 md:mt-[108px] md:pb-[100px]" 
+    <div className="  mx-auto  bg-[#FAFAFA;]" 
       style={{ backgroundImage: `url(${whychooseus})`,
       backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
@@ -30,13 +30,14 @@ export default function WhyChooseUs() {
     }}
      
       >
-   <HomeSectionHeader>
+<CommonWrapper>
+     <HomeSectionHeader>
    
-         <h2  className="text-center md:text-[32px] text-2xl">Why Choose Us</h2>
+         <h2  className=" text-center">Why Choose Us</h2>
      
    </HomeSectionHeader>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:pt-[85px] pt-[50px]">
+ <CommonWrapper>
+   <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:pt-[85px] pt-[50px]">
           {/* First row */}
           <FeatureCard
             icon={<img src={villas1} alt="Villas Icon" className="w-6 h-6" />}
@@ -74,6 +75,9 @@ export default function WhyChooseUs() {
             <img src={Room } alt="Room" className="w-full h-full object-cover rounded-lg " />
           </div>
         </div>
+ </CommonWrapper>
+     
+</CommonWrapper>
       </div>
    
   )
@@ -81,8 +85,8 @@ export default function WhyChooseUs() {
 
 function FeatureCard({ icon, title, description }:FeatureCardProps) {
   return (
- <CommonWrapper>
-       <div className="bg-white p-6 rounded-lg shadow-sm h-[300px] ">
+
+       <div className="bg-white p-6 rounded-lg shadow-sm  ">
   
         
       <div className="flex flex-col items-start ">
@@ -92,6 +96,6 @@ function FeatureCard({ icon, title, description }:FeatureCardProps) {
      <HomeButton> Learn More</HomeButton> 
       </div>
     </div>
- </CommonWrapper>
+
   )
 }
