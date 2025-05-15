@@ -5,7 +5,9 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --color-home: #2dad00;
+  --color-home: #F1B037;
+  --color-dashboard: #E7F9FF;
+
 
   --font-primary: "Roboto", sans-serif;
   --font-secondary: "Lato", sans-serif;
