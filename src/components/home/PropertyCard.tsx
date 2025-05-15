@@ -3,6 +3,7 @@ import { MapPin } from "lucide-react";
 import wifi from "../../assets/images/wifi.svg"
 import pool from "../../assets/images/pool.svg"
 import parking from "../../assets/images/parking.svg"
+import HomeButton from "./HomeButton";
 
 interface PropertyCardProps {
   id: number;
@@ -74,8 +75,10 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
             $ {price} {priceType === "Rent" ? "/month" : ""}
           </span>
         </div>
+
         <div className="border-t border-[#E2E2E2]">
-          <div className=" flex flex-wrap gap-4 mb-6 py-4">
+          <div className="flex justify-between items-center">
+              <div className=" flex flex-wrap gap-4 mb-6 py-4">
             {amenities.map((amenity, index) => (
               <div key={index} className="flex flex-col items-center text-gray-700 text-sm " >
                 <div className="mb-1">
@@ -89,6 +92,12 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
             ))}
 
           </div>
+          <div className="">
+            <HomeButton> View Details</HomeButton>
+          </div>
+
+          </div>
+        
 
         </div>
 
