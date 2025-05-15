@@ -1,16 +1,14 @@
-
-import whychooseus from "../../../assets/images/whychooseus.png"
+import whychooseus from "../../../assets/images/whychooseus.png";
 import CommonWrapper from "@/common/CommonWrapper";
 
-import villas1 from "../../../assets/images/Villas1.svg"
-import Listings from "../../../assets/images/Listings.svg"
-import Villas2 from "../../../assets/images/Villas2.svg"
-import Secure from "../../../assets/images/Secure.svg"
-import Booking from "../../../assets/images/Booking.svg"
-import Room from "../../../assets/images/chooseRoom.png"
+import villas1 from "../../../assets/images/Villas1.svg";
+import Listings from "../../../assets/images/Listings.svg";
+import Villas2 from "../../../assets/images/Villas2.svg";
+import Secure from "../../../assets/images/Secure.svg";
+import Booking from "../../../assets/images/Booking.svg";
+import Room from "../../../assets/images/chooseRoom.png";
 import HomeSectionHeader from "../HomeSectionHeader";
 import HomeButton from "../HomeButton";
-
 
 type FeatureCardProps = {
   icon: React.ReactNode;
@@ -20,6 +18,7 @@ type FeatureCardProps = {
 
 export default function WhyChooseUs() {
   return (
+
   
      
     <div className="  mx-auto  bg-[#FAFAFA;]" 
@@ -45,46 +44,50 @@ export default function WhyChooseUs() {
             description="Discover a wide selection of luxury villas, offering exquisite designs, breathtaking views, and world-class amenities for an unforgettable stay."
           />
 
-          <FeatureCard
-            icon={<img src={Listings} alt="Villas Icon" className="w-6 h-6" />}
-            title="Verified Listings"
-            description="Discover a wide selection of luxury villas, offering exquisite designs, breathtaking views, and world-class amenities for an unforgettable stay."
-          />
 
-          <FeatureCard
-           icon={<img src={Villas2} alt="Villas Icon" className="w-6 h-6" />}
-            title="Wide Selection of Luxury Villas"
-            description="Discover a wide selection of luxury villas, offering exquisite designs, breathtaking views, and world-class amenities for an unforgettable stay."
-          />
+        <FeatureCard
+          icon={<img src={Listings} alt="Villas Icon" className="w-6 h-6" />}
+          title="Verified Listings"
+          description="Discover a wide selection of luxury villas, offering exquisite designs, breathtaking views, and world-class amenities for an unforgettable stay."
+        />
 
-          {/* Second row */}
-          <FeatureCard
-            icon={<img src={Secure} alt="Villas Icon" className="w-6 h-6" />}
-            title="Secure Transactions"
-            description="Discover a wide selection of luxury villas, offering exquisite designs, breathtaking views, and world-class amenities for an unforgettable stay."
-          />
+        <FeatureCard
+          icon={<img src={Villas2} alt="Villas Icon" className="w-6 h-6" />}
+          title="Wide Selection of Luxury Villas"
+          description="Discover a wide selection of luxury villas, offering exquisite designs, breathtaking views, and world-class amenities for an unforgettable stay."
+        />
 
-          <FeatureCard
-           icon={<img src={Booking} alt="Villas Icon" className="w-6 h-6" />}
-            title="Flexible Booking"
-            description="Enjoy flexible booking options tailored to your schedule and preferences. Modify, reschedule, or cancel with ease for a stress-free experience."
-          />
+        {/* Second row */}
+        <FeatureCard
+          icon={<img src={Secure} alt="Villas Icon" className="w-6 h-6" />}
+          title="Secure Transactions"
+          description="Discover a wide selection of luxury villas, offering exquisite designs, breathtaking views, and world-class amenities for an unforgettable stay."
+        />
 
-        
-          <div className="md:col-span-1 h-[300px] p-2">
-            <img src={Room } alt="Room" className="w-full h-full object-cover rounded-lg " />
-          </div>
+        <FeatureCard
+          icon={<img src={Booking} alt="Villas Icon" className="w-6 h-6" />}
+          title="Flexible Booking"
+          description="Enjoy flexible booking options tailored to your schedule and preferences. Modify, reschedule, or cancel with ease for a stress-free experience."
+        />
+
+        <div className="md:col-span-1 h-[300px] p-2">
+          <img
+            src={Room}
+            alt="Room"
+            className="w-full h-full object-cover rounded-lg "
+          />
         </div>
  </CommonWrapper>
      
 </CommonWrapper>
       </div>
-   
-  )
+    </div>
+  );
 }
 
-function FeatureCard({ icon, title, description }:FeatureCardProps) {
+function FeatureCard({ icon, title, description }: FeatureCardProps) {
   return (
+
 
        <div className="bg-white p-6 rounded-lg shadow-sm  ">
   
@@ -98,4 +101,8 @@ function FeatureCard({ icon, title, description }:FeatureCardProps) {
     </div>
 
   )
+
+    
+  );
+
 }

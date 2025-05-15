@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 
-const App = () => {
+const AgencyLayout = () => {
   return (
     <div>
       <Outlet />
@@ -8,4 +8,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default AgencyLayout;
