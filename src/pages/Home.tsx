@@ -250,7 +250,7 @@ const Home = () => {
 
           <CommonWrapper>
 
-            <div className=" w-full px-4 sm:px-6 md:px-8 -mt-16">
+            <div className=" w-full px-4 sm:px-6 md:px-8 ">
 
               <HomeTabs activeTab={activeTab} setActiveTab={setActiveTab} />
             </div>
@@ -281,22 +281,22 @@ const Home = () => {
         </div>
 
         {/* Pagination */}
-        <div className="flex flex-wrap justify-center mt-12 gap-2">
+        <div className="flex flex-wrap justify-end mt-12 gap-2">
           <button
             onClick={() => setCurrentPage(Math.max(1, currentPage - 1))}
-            className="p-2 rounded-full bg-gray-200 text-gray-600 hover:bg-gray-300 transition-colors"
+            className="p-2 "
             disabled={currentPage === 1}
           >
-            <ChevronLeft className="w-5 h-5" />
+            <ChevronLeft className="w-5 h-5 text-[#F1B037]" />
           </button>
 
           {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
             <button
               key={page}
               onClick={() => setCurrentPage(page)}
-              className={`w-10 h-10 rounded-full flex items-center justify-center transition-colors ${
+              className={`w-10 h-10 rounded-md flex items-center justify-center transition-colors ${
                 currentPage === page
-                  ? "bg-amber-500 text-white"
+                  ? "bg-[#F1B037] text-white"
                   : "bg-gray-200 text-gray-600 hover:bg-gray-300"
               }`}
             >
@@ -308,10 +308,10 @@ const Home = () => {
             onClick={() =>
               setCurrentPage(Math.min(totalPages, currentPage + 1))
             }
-            className="p-2 rounded-full bg-gray-200 text-gray-600 hover:bg-gray-300 transition-colors"
+            className="p-2 "
             disabled={currentPage === totalPages}
           >
-            <ChevronRight className="w-5 h-5" />
+            <ChevronRight className="w-5 h-5 text-[#F1B037]" />
           </button>
         </div>
       </div>
