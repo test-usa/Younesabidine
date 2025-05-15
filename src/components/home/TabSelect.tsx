@@ -10,7 +10,7 @@ import {
 interface TabSelectProps {
   title: string;
   object: string[];
-  handleFilterChange: () => void;
+  handleFilterChange: (value: string) => void;
 }
 
 const TabSelect: React.FC<TabSelectProps> = ({
