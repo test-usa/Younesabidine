@@ -1,4 +1,4 @@
-import Developer from "@/Dashboard/Developer/Developer";
+import Developer from "@/Dashboard/Developer/pages/Developer";
 import DeveloperLayout from "@/Layouts/DeveloperLayout";
 
 const developerRoutes = {
