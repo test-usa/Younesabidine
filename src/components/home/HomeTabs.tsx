@@ -68,11 +68,15 @@ const amenityOptions = [
   "Garden",
 ];
 
-import { ChevronDown } from "lucide-react";
 import { useState } from "react";
 import TabSelect from "./TabSelect";
 import TwoButton from "./TwoButton";
-const HomeTabs = ({ activeTab, setActiveTab }) => {
+
+interface HomeTabs {
+  activeTab: string;
+  setActiveTab: (value: string) => void;
+}
+const HomeTabs: React.FC<HomeTabs> = ({ activeTab, setActiveTab }) => {
   const [filters, setFilters] = useState({
     location: "Any Location",
     propertyType: "Any Type",
@@ -81,7 +85,6 @@ const HomeTabs = ({ activeTab, setActiveTab }) => {
     amenities: "Any Amenities",
   });
 
-  console.log("filters", filters);
   const handleFilterChange = (filterName: string, value: string) => {
     setFilters((prev) => ({
       ...prev,
@@ -90,7 +93,7 @@ const HomeTabs = ({ activeTab, setActiveTab }) => {
   };
   return (
     <>
-      <div className=" rounded-lg shadow-xl overflow-hidden">
+      <div className="w-full rounded-lg shadow-xl overflow-hidden">
         <Tabs
           defaultValue="buy"
           value={activeTab}
@@ -118,10 +121,10 @@ const HomeTabs = ({ activeTab, setActiveTab }) => {
             </TabsTrigger>
           </TabsList>
 
-          <TabsContent value="buy" className=" bg-white p-10 rounded-lg">
-            <div className=" flex  justify-between items-center gap-6">
-              <div className="flex  items-center gap-6">
-                <div className="">
+          <TabsContent value="buy" className=" bg-white p-10 rounded-lg w-full">
+            <div className=" flex flex-col xl:flex-row  justify-between items-center gap-6">
+              <div className="w-full flex flex-col lg:flex-row  items-center gap-6">
+                <div className="w-full">
                   <label className="block text-sm font-medium  text-black mb-2">
                     Location
                   </label>
@@ -132,7 +135,7 @@ const HomeTabs = ({ activeTab, setActiveTab }) => {
                     handleFilterChange={handleFilterChange}
                   />
                 </div>
-                <div className="">
+                <div className="w-full">
                   <label className="block text-sm font-medium  text-black mb-2">
                     Property Type
                   </label>
@@ -143,7 +146,7 @@ const HomeTabs = ({ activeTab, setActiveTab }) => {
                     handleFilterChange={handleFilterChange}
                   />
                 </div>
-                <div className="">
+                <div className="w-full">
                   <label className="block text-sm font-medium  text-black mb-2">
                     Property Type
                   </label>
@@ -154,7 +157,7 @@ const HomeTabs = ({ activeTab, setActiveTab }) => {
                     handleFilterChange={handleFilterChange}
                   />
                 </div>
-                <div className="relative">
+                <div className="w-full">
                   <label className="block text-sm font-medium  text-black mb-2">
                     Bedrooms
                   </label>
@@ -165,7 +168,7 @@ const HomeTabs = ({ activeTab, setActiveTab }) => {
                     handleFilterChange={handleFilterChange}
                   />
                 </div>
-                <div className="">
+                <div className="w-full">
                   <label className="block text-sm font-medium  text-black mb-2">
                     Amenities
                   </label>
@@ -307,258 +310,6 @@ const HomeTabs = ({ activeTab, setActiveTab }) => {
               <TwoButton />
             </div>
           </TabsContent>
-
-          {/* <TabsContent value="sales" className="m-0">
-            <div className="grid grid-cols-1 md:grid-cols-5 gap-4 p-6">
-              <div className="relative">
-                <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Location
-                </label>
-                <div className="relative">
-                  <select
-                    className="block w-full pl-3 pr-10 py-2 text-base border border-gray-300 focus:outline-none focus:ring-amber-500 focus:border-amber-500 rounded-md appearance-none"
-                    value={filters.location}
-                    onChange={(e) =>
-                      handleFilterChange("location", e.target.value)
-                    }
-                  >
-                    {locationOptions.map((option) => (
-                      <option key={option} value={option}>
-                        {option}
-                      </option>
-                    ))}
-                  </select>
-                  <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                    <ChevronDown className="h-4 w-4" />
-                  </div>
-                </div>
-              </div>
-
-              <div className="relative">
-                <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Property Type
-                </label>
-                <div className="relative">
-                  <select
-                    className="block w-full pl-3 pr-10 py-2 text-base border border-gray-300 focus:outline-none focus:ring-amber-500 focus:border-amber-500 rounded-md appearance-none"
-                    value={filters.propertyType}
-                    onChange={(e) =>
-                      handleFilterChange("propertyType", e.target.value)
-                    }
-                  >
-                    {propertyTypeOptions.map((option) => (
-                      <option key={option} value={option}>
-                        {option}
-                      </option>
-                    ))}
-                  </select>
-                  <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                    <ChevronDown className="h-4 w-4" />
-                  </div>
-                </div>
-              </div>
-
-              <div className="relative">
-                <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Price Range
-                </label>
-                <div className="relative">
-                  <select
-                    className="block w-full pl-3 pr-10 py-2 text-base border border-gray-300 focus:outline-none focus:ring-amber-500 focus:border-amber-500 rounded-md appearance-none"
-                    value={filters.priceRange}
-                    onChange={(e) =>
-                      handleFilterChange("priceRange", e.target.value)
-                    }
-                  >
-                    {priceRangeOptions.sales.map((option) => (
-                      <option key={option} value={option}>
-                        {option}
-                      </option>
-                    ))}
-                  </select>
-                  <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                    <ChevronDown className="h-4 w-4" />
-                  </div>
-                </div>
-              </div>
-
-              <div className="relative">
-                <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Bedrooms
-                </label>
-                <div className="relative">
-                  <select
-                    className="block w-full pl-3 pr-10 py-2 text-base border border-gray-300 focus:outline-none focus:ring-amber-500 focus:border-amber-500 rounded-md appearance-none"
-                    value={filters.bedrooms}
-                    onChange={(e) =>
-                      handleFilterChange("bedrooms", e.target.value)
-                    }
-                  >
-                    {bedroomOptions.map((option) => (
-                      <option key={option} value={option}>
-                        {option}
-                      </option>
-                    ))}
-                  </select>
-                  <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                    <ChevronDown className="h-4 w-4" />
-                  </div>
-                </div>
-              </div>
-
-              <div className="relative">
-                <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Amenities
-                </label>
-                <div className="relative">
-                  <select
-                    className="block w-full pl-3 pr-10 py-2 text-base border border-gray-300 focus:outline-none focus:ring-amber-500 focus:border-amber-500 rounded-md appearance-none"
-                    value={filters.amenities}
-                    onChange={(e) =>
-                      handleFilterChange("amenities", e.target.value)
-                    }
-                  >
-                    {amenityOptions.map((option) => (
-                      <option key={option} value={option}>
-                        {option}
-                      </option>
-                    ))}
-                  </select>
-                  <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                    <ChevronDown className="h-4 w-4" />
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <TwoButton />
-          </TabsContent> */}
-          {/* 
-          <TabsContent value="rent" className="m-0">
-            <div className="grid grid-cols-1 md:grid-cols-5 gap-4 p-6">
-              <div className="relative">
-                <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Location
-                </label>
-                <div className="relative">
-                  <select
-                    className="block w-full pl-3 pr-10 py-2 text-base border border-gray-300 focus:outline-none focus:ring-amber-500 focus:border-amber-500 rounded-md appearance-none"
-                    value={filters.location}
-                    onChange={(e) =>
-                      handleFilterChange("location", e.target.value)
-                    }
-                  >
-                    {locationOptions.map((option) => (
-                      <option key={option} value={option}>
-                        {option}
-                      </option>
-                    ))}
-                  </select>
-                  <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                    <ChevronDown className="h-4 w-4" />
-                  </div>
-                </div>
-              </div>
-
-              <div className="relative">
-                <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Property Type
-                </label>
-                <div className="relative">
-                  <select
-                    className="block w-full pl-3 pr-10 py-2 text-base border border-gray-300 focus:outline-none focus:ring-amber-500 focus:border-amber-500 rounded-md appearance-none"
-                    value={filters.propertyType}
-                    onChange={(e) =>
-                      handleFilterChange("propertyType", e.target.value)
-                    }
-                  >
-                    {propertyTypeOptions.map((option) => (
-                      <option key={option} value={option}>
-                        {option}
-                      </option>
-                    ))}
-                  </select>
-                  <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                    <ChevronDown className="h-4 w-4" />
-                  </div>
-                </div>
-              </div>
-
-              <div className="relative">
-                <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Price Range
-                </label>
-                <div className="relative">
-                  <select
-                    className="block w-full pl-3 pr-10 py-2 text-base border border-gray-300 focus:outline-none focus:ring-amber-500 focus:border-amber-500 rounded-md appearance-none"
-                    value={filters.priceRange}
-                    onChange={(e) =>
-                      handleFilterChange("priceRange", e.target.value)
-                    }
-                  >
-                    {priceRangeOptions.rent.map((option) => (
-                      <option key={option} value={option}>
-                        {option}
-                      </option>
-                    ))}
-                  </select>
-                  <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                    <ChevronDown className="h-4 w-4" />
-                  </div>
-                </div>
-              </div>
-
-              <div className="relative">
-                <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Bedrooms
-                </label>
-                <div className="relative">
-                  <select
-                    className="block w-full pl-3 pr-10 py-2 text-base border border-gray-300 focus:outline-none focus:ring-amber-500 focus:border-amber-500 rounded-md appearance-none"
-                    value={filters.bedrooms}
-                    onChange={(e) =>
-                      handleFilterChange("bedrooms", e.target.value)
-                    }
-                  >
-                    {bedroomOptions.map((option) => (
-                      <option key={option} value={option}>
-                        {option}
-                      </option>
-                    ))}
-                  </select>
-                  <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                    <ChevronDown className="h-4 w-4" />
-                  </div>
-                </div>
-              </div>
-
-              <div className="relative">
-                <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Amenities
-                </label>
-                <div className="relative">
-                  <select
-                    className="block w-full pl-3 pr-10 py-2 text-base border border-gray-300 focus:outline-none focus:ring-amber-500 focus:border-amber-500 rounded-md appearance-none"
-                    value={filters.amenities}
-                    onChange={(e) =>
-                      handleFilterChange("amenities", e.target.value)
-                    }
-                  >
-                    {amenityOptions.map((option) => (
-                      <option key={option} value={option}>
-                        {option}
-                      </option>
-                    ))}
-                  </select>
-                  <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                    <ChevronDown className="h-4 w-4" />
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <TwoButton />
-          </TabsContent> */}
         </Tabs>
       </div>
     </>

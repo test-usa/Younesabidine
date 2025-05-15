@@ -10,6 +10,7 @@ import {
 interface TabSelectProps {
   title: string;
   object: string[];
+  handleFilterChange: () => void;
 }
 
 const TabSelect: React.FC<TabSelectProps> = ({
@@ -20,7 +21,7 @@ const TabSelect: React.FC<TabSelectProps> = ({
   return (
     <div>
       <Select onValueChange={handleFilterChange}>
-        <SelectTrigger className="w-[160px] border border-[#BAB8B8] text-[#888080] text-xs">
+        <SelectTrigger className="w-full   border border-[#BAB8B8] text-[#888080] text-xs">
           <SelectValue placeholder={title} />
         </SelectTrigger>
         <SelectContent className="bg-white">
